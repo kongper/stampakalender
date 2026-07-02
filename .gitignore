@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.db-journal
+.DS_Store
+/tmp/
+scrape.json
+changes_report.txt

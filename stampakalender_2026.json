@@ -1,0 +1,2982 @@
+{
+ "generert": "2026-07-02",
+ "kilde": "statisk.bestille.no/Time/StaticDay (Lillehammer kommune / Aktiv Kommune)",
+ "merknad": "Data hentet 2026-07-02. Kilden har kun data fra og med juli 2026; januar-juni 2026 finnes ikke lenger i systemet. Bookinger for hosten/vinteren er fatallige fordi de i stor grad ikke er lagt inn enna per uttrekksdato.",
+ "navn": [
+  "Damer LIKE - Lillehammer Ishockeyklubb",
+  "LKK - Lillehammer Kunstløpklubb",
+  "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+  "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+  "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+  "Yngres avd LIK - Lillehammer Ishockeyklubb",
+  "Senior Gjøvik Hockey",
+  "Utdanningsmessen Innlandet fylkeskommune",
+  "G 12 LFK - Lillehammer Fotballklubb",
+  "barn LIF - Lillehammer Idrettsforening",
+  "J 14 LFK - Lillehammer Fotballklubb",
+  "G 19 LFK - Lillehammer Fotballklubb",
+  "Senior Herrer LFK - Lillehammer Fotballklubb",
+  "Fotballskole LFK - Lillehammer Fotballklubb",
+  "Lillehammer Veteranvognklubb",
+  "Stevner LIF - Lillehammer Idrettsforening",
+  "Gatefotball Frelsesarmeen",
+  "Birkebeinerrittet Birken AS",
+  "LCK - Lillehammer Cykleklubb"
+ ],
+ "stengt": {
+  "eidsiva": {
+   "fra": "2026-06-30",
+   "til": "2026-08-02",
+   "beskrivelse": "Stengt LK (sommerstengt/vedlikehold) hele dagen, alle ressurser"
+  }
+ },
+ "lokasjoner": {
+  "eidsiva": {
+   "navn": "Eidsiva Arena / Ungdomshallen",
+   "ressurser": [
+    "Idrettshall, vest- basishall",
+    "Idrettshall, øst",
+    "Ishall",
+    "Garderobe 3",
+    "Garderobe 4",
+    "Garderobe 5",
+    "Garderobe 6",
+    "Garderobe 7",
+    "Garderobe 8",
+    "Garderobe Dommere",
+    "Garderobe Vest",
+    "Ungdomshallen",
+    "Uhall - ishall",
+    "Uhall - garderobe 1",
+    "Uhall - garderobe 2",
+    "Uhall - garderobe 3",
+    "Uhall - garderobe 4",
+    "Uhall - garderobe 5",
+    "Uhall - garderobe 6"
+   ],
+   "dager": {
+    "2026-08-01": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-08-02": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "22:00"
+     }
+    ],
+    "2026-08-03": [
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "09:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "13:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "13:30",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "19:00",
+      "til": "20:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-04": [
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "09:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "13:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "13:30",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "19:00",
+      "til": "20:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-05": [
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "09:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "13:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "13:30",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "19:00",
+      "til": "20:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-06": [
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "09:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "13:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "13:30",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "19:00",
+      "til": "20:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-07": [
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "09:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "18:30"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:00",
+      "til": "18:30"
+     }
+    ],
+    "2026-08-08": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "11:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "11:30",
+      "til": "12:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:30",
+      "til": "13:30"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-08-09": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "13:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "14:00",
+      "til": "15:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "15:00",
+      "til": "16:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "22:00"
+     }
+    ],
+    "2026-08-10": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "15:00",
+      "til": "16:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "16:00",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "18:55",
+      "til": "19:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "19:25"
+     }
+    ],
+    "2026-08-11": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "15:00",
+      "til": "16:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "19:25"
+     }
+    ],
+    "2026-08-12": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:00",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "18:00",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "19:00",
+      "til": "20:25"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:30",
+      "til": "12:30"
+     }
+    ],
+    "2026-08-13": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "15:55",
+      "til": "16:55"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "16:55",
+      "til": "19:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "16:25",
+      "til": "20:25"
+     }
+    ],
+    "2026-08-14": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:00",
+      "til": "17:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:00",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "07:30",
+      "til": "12:30"
+     }
+    ],
+    "2026-08-15": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "11:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "12:00",
+      "til": "16:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:00",
+      "til": "17:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:30",
+      "til": "18:30"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "11:30",
+      "til": "16:30"
+     }
+    ],
+    "2026-08-16": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "22:00"
+     }
+    ],
+    "2026-08-17": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "14:55",
+      "til": "18:25"
+     }
+    ],
+    "2026-08-18": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "16:55",
+      "til": "17:55"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "19:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "19:25",
+      "til": "21:25"
+     }
+    ],
+    "2026-08-19": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:55",
+      "til": "19:25"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-20": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "13:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "18:55",
+      "til": "20:25"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-21": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "11:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "16:55"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:25",
+      "til": "21:25"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "14:55",
+      "til": "17:25"
+     },
+     {
+      "ressurs": "Garderobe 5",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:55",
+      "til": "21:25"
+     },
+     {
+      "ressurs": "Garderobe Dommere",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:25",
+      "til": "21:55"
+     }
+    ],
+    "2026-08-22": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "12:30",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-08-23": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-18 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "12:30"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "U-20 LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:25",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "18:00",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "22:00"
+     }
+    ],
+    "2026-08-24": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "14:55",
+      "til": "18:25"
+     }
+    ],
+    "2026-08-25": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "19:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "19:25",
+      "til": "21:25"
+     }
+    ],
+    "2026-08-26": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "16:55",
+      "til": "17:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-27": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-08-28": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "17:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Yngres avd LIK - Lillehammer Ishockeyklubb",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "14:55",
+      "til": "17:25"
+     },
+     {
+      "ressurs": "Garderobe 6",
+      "leietaker": "Yngres avd LIK - Lillehammer Ishockeyklubb",
+      "fra": "17:25",
+      "til": "23:25"
+     }
+    ],
+    "2026-08-29": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Yngres avd LIK - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "11:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "11:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     },
+     {
+      "ressurs": "Garderobe 6",
+      "leietaker": "Yngres avd LIK - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "12:00"
+     }
+    ],
+    "2026-08-30": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "22:00"
+     }
+    ],
+    "2026-08-31": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "10:00",
+      "til": "12:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Senior Gjøvik Hockey",
+      "fra": "15:00",
+      "til": "16:25"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "16:25",
+      "til": "18:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "17:55",
+      "til": "18:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "Senior Gjøvik Hockey",
+      "fra": "14:00",
+      "til": "23:25"
+     }
+    ],
+    "2026-09-01": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Senior Gjøvik Hockey",
+      "fra": "14:55",
+      "til": "16:25"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "19:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "Senior Gjøvik Hockey",
+      "fra": "07:00",
+      "til": "17:30"
+     }
+    ],
+    "2026-09-02": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-03": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:25",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe Dommere",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "15:55",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "15:55",
+      "til": "21:55"
+     }
+    ],
+    "2026-09-04": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "LKK - Lillehammer Kunstløpklubb",
+      "fra": "15:25",
+      "til": "16:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-05": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-09-06": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-09-07": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-08": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-09": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-10": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-11": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-12": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-09-13": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-09-14": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-15": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-16": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-17": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe Dommere",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:25",
+      "til": "21:25"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "15:55",
+      "til": "21:55"
+     }
+    ],
+    "2026-09-18": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-19": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-09-20": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-09-21": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-22": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-23": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-24": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:55",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "17:25",
+      "til": "20:55"
+     },
+     {
+      "ressurs": "Garderobe Dommere",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "16:25",
+      "til": "21:25"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "15:55",
+      "til": "21:55"
+     }
+    ],
+    "2026-09-25": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-26": [
+     {
+      "ressurs": "Ishall",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "14:25",
+      "til": "18:25"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     },
+     {
+      "ressurs": "Garderobe 4",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "14:55",
+      "til": "18:25"
+     },
+     {
+      "ressurs": "Garderobe Dommere",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "13:25",
+      "til": "19:25"
+     },
+     {
+      "ressurs": "Garderobe Vest",
+      "leietaker": "A-lag LIKE - Lillehammer Ishockeyklubb Elite",
+      "fra": "13:25",
+      "til": "19:25"
+     }
+    ],
+    "2026-09-27": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-09-28": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-29": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-09-30": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-01": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-02": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-03": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-10-04": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-10-05": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-06": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-07": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-08": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-09": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-10": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-10-11": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-10-12": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-13": [
+     {
+      "ressurs": "Idrettshall, vest- basishall",
+      "leietaker": "Utdanningsmessen Innlandet fylkeskommune",
+      "fra": "09:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Idrettshall, øst",
+      "leietaker": "Utdanningsmessen Innlandet fylkeskommune",
+      "fra": "09:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Ishall",
+      "leietaker": "Utdanningsmessen Innlandet fylkeskommune",
+      "fra": "09:00",
+      "til": "14:00"
+     },
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-14": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-15": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-16": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-17": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-10-18": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-10-19": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-20": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-21": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-22": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-23": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-24": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-10-25": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-10-26": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-27": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-28": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-29": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-30": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-10-31": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-11-01": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-11-02": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-03": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-04": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-05": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-06": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-07": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-11-08": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-11-09": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-10": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-11": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-12": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-13": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-14": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-11-15": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-11-16": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-17": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-18": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-19": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-20": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-21": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-11-22": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-11-23": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-24": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-25": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-26": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-27": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-11-28": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-11-29": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-11-30": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-01": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-02": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-03": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-04": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-05": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-12-06": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-12-07": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-08": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-09": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-10": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-11": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-12": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-12-13": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-12-14": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-15": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-16": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-17": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-18": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-19": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "08:00",
+      "til": "19:30"
+     }
+    ],
+    "2026-12-20": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-12-21": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-22": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-23": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-24": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-27": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "09:00",
+      "til": "09:30"
+     }
+    ],
+    "2026-12-28": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-29": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ],
+    "2026-12-30": [
+     {
+      "ressurs": "Garderobe 3",
+      "leietaker": "Damer LIKE - Lillehammer Ishockeyklubb",
+      "fra": "07:00",
+      "til": "23:30"
+     }
+    ]
+   }
+  },
+  "stampesletta": {
+   "navn": "Stampesletta (uteanlegg)",
+   "ressurser": [
+    "Garderobe Nord",
+    "Garderobe Syd",
+    "Søndre Bane Nord",
+    "Søndre bane Sør",
+    "Øvre Bane Nord",
+    "Øvre bane Sør",
+    "Nedre Bane",
+    "Vestre Bane",
+    "Nordre Grus",
+    "Treningssletta",
+    "Parkeringsareal",
+    "Røyslimoen Nord",
+    "Røyslimoen Sør",
+    "Røyslimoen 7er"
+   ],
+   "dager": {
+    "2026-06-30": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "G 12 LFK - Lillehammer Fotballklubb",
+      "fra": "19:15",
+      "til": "20:50"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "G 12 LFK - Lillehammer Fotballklubb",
+      "fra": "19:15",
+      "til": "20:50"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-01": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-02": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-03": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "G 12 LFK - Lillehammer Fotballklubb",
+      "fra": "19:15",
+      "til": "20:50"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "G 12 LFK - Lillehammer Fotballklubb",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-05": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "15:40",
+      "til": "17:10"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "15:40",
+      "til": "17:10"
+     }
+    ],
+    "2026-07-06": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-07": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-08": [
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-09": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "17:35",
+      "til": "19:10"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-10": [
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "G 19 LFK - Lillehammer Fotballklubb",
+      "fra": "20:25",
+      "til": "21:55"
+     }
+    ],
+    "2026-07-12": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "15:40",
+      "til": "17:10"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "J 14 LFK - Lillehammer Fotballklubb",
+      "fra": "15:40",
+      "til": "17:10"
+     }
+    ],
+    "2026-07-13": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-14": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-15": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-16": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-19": [
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Senior Herrer LFK - Lillehammer Fotballklubb",
+      "fra": "14:35",
+      "til": "16:35"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Senior Herrer LFK - Lillehammer Fotballklubb",
+      "fra": "14:35",
+      "til": "16:35"
+     }
+    ],
+    "2026-07-20": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-21": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-22": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-23": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-27": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-28": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-29": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-07-30": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-03": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-04": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-05": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-06": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-10": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-11": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-12": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-13": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-14": [
+     {
+      "ressurs": "Søndre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Søndre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre Bane Nord",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     },
+     {
+      "ressurs": "Øvre bane Sør",
+      "leietaker": "Fotballskole LFK - Lillehammer Fotballklubb",
+      "fra": "09:15",
+      "til": "15:25"
+     }
+    ],
+    "2026-08-15": [
+     {
+      "ressurs": "Parkeringsareal",
+      "leietaker": "Lillehammer Veteranvognklubb",
+      "fra": "07:00",
+      "til": "12:00"
+     }
+    ],
+    "2026-08-17": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-18": [
+     {
+      "ressurs": "Garderobe Nord",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "18:10",
+      "til": "22:50"
+     },
+     {
+      "ressurs": "Garderobe Syd",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "18:10",
+      "til": "22:50"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "18:45",
+      "til": "22:20"
+     }
+    ],
+    "2026-08-19": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-20": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-22": [
+     {
+      "ressurs": "Garderobe Nord",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:45",
+      "til": "16:45"
+     },
+     {
+      "ressurs": "Garderobe Syd",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:45",
+      "til": "16:45"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "11:20",
+      "til": "16:20"
+     },
+     {
+      "ressurs": "Nordre Grus",
+      "leietaker": "Gatefotball Frelsesarmeen",
+      "fra": "07:00",
+      "til": "15:00"
+     }
+    ],
+    "2026-08-23": [
+     {
+      "ressurs": "Garderobe Nord",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:45",
+      "til": "16:45"
+     },
+     {
+      "ressurs": "Garderobe Syd",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:45",
+      "til": "16:45"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "11:20",
+      "til": "16:20"
+     }
+    ],
+    "2026-08-24": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-25": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-26": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-08-27": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     },
+     {
+      "ressurs": "Parkeringsareal",
+      "leietaker": "Birkebeinerrittet Birken AS",
+      "fra": "07:00",
+      "til": "23:00"
+     }
+    ],
+    "2026-08-31": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-01": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-02": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-03": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-07": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-08": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-09": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-10": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-13": [
+     {
+      "ressurs": "Garderobe Nord",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:15",
+      "til": "17:45"
+     },
+     {
+      "ressurs": "Garderobe Syd",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:15",
+      "til": "17:45"
+     },
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "Stevner LIF - Lillehammer Idrettsforening",
+      "fra": "10:15",
+      "til": "17:15"
+     }
+    ],
+    "2026-09-14": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-15": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-16": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-17": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-21": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-22": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-23": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-24": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-28": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-29": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-09-30": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-10-01": [
+     {
+      "ressurs": "Nedre Bane",
+      "leietaker": "barn LIF - Lillehammer Idrettsforening",
+      "fra": "19:15",
+      "til": "20:50"
+     }
+    ],
+    "2026-10-03": [
+     {
+      "ressurs": "Nordre Grus",
+      "leietaker": "LCK - Lillehammer Cykleklubb",
+      "fra": "07:00",
+      "til": "19:00"
+     },
+     {
+      "ressurs": "Treningssletta",
+      "leietaker": "LCK - Lillehammer Cykleklubb",
+      "fra": "07:00",
+      "til": "19:00"
+     }
+    ],
+    "2026-10-04": [
+     {
+      "ressurs": "Nordre Grus",
+      "leietaker": "LCK - Lillehammer Cykleklubb",
+      "fra": "07:00",
+      "til": "17:00"
+     },
+     {
+      "ressurs": "Treningssletta",
+      "leietaker": "LCK - Lillehammer Cykleklubb",
+      "fra": "07:00",
+      "til": "17:00"
+     }
+    ]
+   }
+  }
+ }
+}
