@@ -5,3 +5,7 @@ __pycache__/
 /tmp/
 scrape.json
 changes_report.txt
+node_modules/
+package.json
+package-lock.json
+_site/

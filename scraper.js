@@ -62,4 +62,6 @@
       days++;
       d.setUTCDate(d.getUTCDate() + 1);
     }
-    return { doneDays: days, totalB
+    return { doneDays: days, totalBookings: window.__ACC.length };
+  };
+})();

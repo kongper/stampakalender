@@ -1,0 +1,86 @@
+name: Nightly scrape and deploy
+
+on:
+  schedule:
+    # 02:00 UTC daily (~03:00-04:00 Norway). GitHub cron is UTC.
+    - cron: "0 2 * * *"
+  workflow_dispatch:
+    inputs:
+      days_ahead:
+        description: "How many days ahead to scrape"
+        required: false
+        default: "150"
+
+permissions:
+  contents: write   # commit updated DB + index.html
+  pages: write      # deploy to Pages
+  id-token: write
+
+# Share the deploy lock with deploy.yml so the two never publish at once.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  nightly:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Playwright + Chromium
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm install playwright@latest
+          npx playwright install --with-deps chromium
+
+      - name: Scrape source (bestille.no)
+        env:
+          DAYS_AHEAD: ${{ github.event.inputs.days_ahead || '150' }}
+        run: node scrape_playwright.js
+
+      - name: Update DB and regenerate index.html
+        run: python3 nightly.py
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "stampakalender-bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add stampakalender.db index.html
+          if git diff --staged --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Nightly update $(date -u +'%Y-%m-%d %H:%M UTC')"
+            git push
+          fi
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Stage static site
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+          cp CNAME _site/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

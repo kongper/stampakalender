@@ -85,4 +85,4 @@ def rebuild_html(conn, today=None):
     out = out.replace("__TODAY__", today)
     open(HTML_WORK, "w", encoding="utf-8").write(out)
     _bytecopy(HTML_WORK, HTML_PROJECT)
-    retur
+    return len(rows), len(eid), len(stamp)
