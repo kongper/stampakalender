@@ -20,6 +20,7 @@ h1{font-size:22px;margin:0 0 2px;font-weight:700;}
 .fsum{font-size:12.5px;color:#5b6675;}
 select,input[type=search],input[type=date]{padding:7px 10px;border:1px solid #cdd6e0;border-radius:8px;background:#fff;font-size:13px;color:#1c2430;}
 .fpanel{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:14px;margin-bottom:14px;}
+.fpanel[hidden]{display:none;}
 @media(max-width:640px){.fpanel{grid-template-columns:1fr;}}
 .fcol .fhead{font-size:13px;margin-bottom:6px;padding-bottom:6px;border-bottom:1px solid #eef2f6;}
 .fcol label{display:flex;align-items:center;gap:6px;cursor:pointer;}
@@ -99,8 +100,8 @@ input[type=checkbox]{accent-color:#2f6fd0;}
 
   <div class="toolbar">
     <div class="seg" id="viewSeg">
-      <button data-view="month" class="on">Måned</button>
-      <button data-view="day">Dag</button>
+      <button data-view="month">Måned</button>
+      <button data-view="day" class="on">Dag</button>
     </div>
     <button id="filterToggle" class="fbtn">Filtrer ressurser ▾</button>
     <span class="fsum" id="filterSummary"></span>
@@ -118,13 +119,13 @@ input[type=checkbox]{accent-color:#2f6fd0;}
     <div class="factions"><button id="selAll">Velg alle</button><button id="selNone">Nullstill</button></div>
   </div>
 
-  <div class="navbar" id="monthNav">
+  <div class="navbar" id="monthNav" hidden>
     <button class="nav" id="prev">‹</button>
     <div class="mlabel" id="mlabel"></div>
     <button class="nav" id="next">›</button>
     <button class="idag" id="todayBtn">I dag</button>
   </div>
-  <div class="navbar" id="dayNav" hidden>
+  <div class="navbar" id="dayNav">
     <button class="nav" id="dayPrev">‹</button>
     <input type="date" id="dayInput">
     <button class="nav" id="dayNext">›</button>
@@ -132,7 +133,7 @@ input[type=checkbox]{accent-color:#2f6fd0;}
     <div class="mlabel" id="dayLabel"></div>
   </div>
 
-  <div id="monthView">
+  <div id="monthView" hidden>
     <div class="layout">
       <div class="cal">
         <div class="dow"><div>Man</div><div>Tir</div><div>Ons</div><div>Tor</div><div>Fre</div><div>Lør</div><div>Søn</div></div>
@@ -143,7 +144,7 @@ input[type=checkbox]{accent-color:#2f6fd0;}
       </div>
     </div>
   </div>
-  <div id="dayView" hidden></div>
+  <div id="dayView"></div>
 
   <div class="legend">
     <h3>Leietakere</h3>
@@ -170,9 +171,14 @@ const closure = DATA.stengt.eidsiva;
 function isEidClosed(day){ return day>=closure.fra && day<=closure.til; }
 
 const _T=TODAY.split('-');
+function defaultPicked(venue,r){
+  if(venue==='eid') return /^Uhall - garderobe/i.test(r);
+  const rl=r.toLowerCase();
+  return rl.indexOf('garderobe')===0 || rl.indexOf('søndre bane')===0 || rl.indexOf('øvre bane')===0;
+}
 const picked = new Set();
-DATA.resEid.forEach(r=>picked.add('eid|'+r));
-DATA.resStamp.forEach(r=>picked.add('stamp|'+r));
+DATA.resEid.forEach(r=>{ if(defaultPicked('eid',r)) picked.add('eid|'+r); });
+DATA.resStamp.forEach(r=>{ if(defaultPicked('stamp',r)) picked.add('stamp|'+r); });
 let state={ view:'month', q:'', y:+_T[0], m:+_T[1]-1, sel:null, day:TODAY };
 
 function pad(n){return String(n).padStart(2,'0');}
@@ -202,14 +208,14 @@ function groupBookings(list){
 }
 
 function buildFilter(){
-  const mk=(venue,arr)=>arr.map(r=>'<label><input type="checkbox" class="resChk" data-key="'+venue+'|'+r+'" checked> '+r+'</label>').join('');
+  const mk=(venue,arr)=>arr.map(r=>'<label><input type="checkbox" class="resChk" data-key="'+venue+'|'+r+'"'+(picked.has(venue+'|'+r)?' checked':'')+'> '+r+'</label>').join('');
   document.getElementById('fitems-eid').innerHTML=mk('eid',DATA.resEid);
   document.getElementById('fitems-stamp').innerHTML=mk('stamp',DATA.resStamp);
   document.querySelectorAll('.resChk').forEach(c=>c.onchange=onResChange);
   document.querySelectorAll('.arenaAll').forEach(c=>c.onchange=onArenaToggle);
   document.getElementById('selAll').onclick=()=>setAll(true);
   document.getElementById('selNone').onclick=()=>setAll(false);
-  document.getElementById('filterToggle').onclick=()=>{const p=document.getElementById('filterPanel'); p.hidden=!p.hidden;};
+  document.getElementById('filterToggle').onclick=()=>{const p=document.getElementById('filterPanel'); p.hidden=!p.hidden; document.getElementById('filterToggle').textContent='Filtrer ressurser '+(p.hidden?'▾':'▴');};
   syncArenaChecks(); updateSummary();
 }
 function onResChange(e){ const k=e.target.dataset.key; if(e.target.checked)picked.add(k); else picked.delete(k); syncArenaChecks(); updateSummary(); refresh(); }
@@ -274,7 +280,7 @@ function renderSide(){
   const list=bookingsFor(state.sel);
   const groups=groupBookings(list);
   let h='<h2>'+WD[d.getDay()]+' '+d.getDate()+'. '+MONTHS[d.getMonth()].toLowerCase()+'</h2><div class="d">'+groups.length+' booking'+(groups.length===1?'':'er')+'</div>';
-  h+='<div class="tllink"><button class="fbtn" onclick="goDay(\''+state.sel+'\')">Vis tidslinje for dagen →</button></div>';
+  h+='<div class="tllink"><button class="fbtn" id="tlBtn" data-day="'+state.sel+'">Vis tidslinje for dagen →</button></div>';
   if(!groups.length){ h+='<div class="empty">Ingen bookinger'+((eidVisible()&&isEidClosed(state.sel))?' — Eidsiva Arena sommerstengt.':'.')+'</div>'; }
   groups.forEach(g=>{
     const resHtml = g.res.length>1
@@ -287,6 +293,7 @@ function renderSide(){
        '<div class="n">'+g.name+'</div></div>';
   });
   side.innerHTML=h;
+  const _b=document.getElementById('tlBtn'); if(_b){ _b.onclick=function(){ goDay(_b.getAttribute('data-day')); }; }
 }
 
 function renderDay(){
@@ -354,7 +361,7 @@ document.getElementById('dayInput').onchange=e=>{ if(e.target.value){ state.day=
 document.getElementById('note').innerHTML='Data hentet fra bestille.no <b>2. juli 2026</b>. Kilden hadde kun data fra og med juli 2026 (jan–jun finnes ikke lenger). Bookinger for høsten/vinteren er få fordi de i stor grad ikke var lagt inn ennå på uttrekkstidspunktet. Eidsiva Arena er sommerstengt 30.06–02.08.';
 document.getElementById('footer').innerHTML='Kilde: statisk.bestille.no (Lillehammer kommune / Aktiv Kommune). «Stengt LK»-rader er utelatt fra bookinglisten og vist som sommerstengt.';
 
-buildFilter(); renderStats(); renderLegend(); render(); updateNav(); renderSide();
+buildFilter(); renderStats(); renderLegend(); render(); updateNav(); renderSide(); switchView('day');
 </script>
 </body>
 </html>
