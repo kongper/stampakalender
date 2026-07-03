@@ -64,7 +64,19 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Nightly update $(date -u +'%Y-%m-%d %H:%M UTC')"
-            git push
+            # Remote may have advanced since checkout (manual push or another run).
+            # Rebase onto latest main and push, retrying on the race.
+            pushed=false
+            for i in 1 2 3; do
+              git rebase --abort 2>/dev/null || true
+              if git pull --rebase --autostash origin main && git push; then
+                pushed=true; echo "Pushed on attempt $i"; break
+              fi
+              echo "Push attempt $i failed; retrying in 5s..."; sleep 5
+            done
+            if [ "$pushed" != true ]; then
+              echo "ERROR: could not push after 3 attempts"; exit 1
+            fi
           fi
 
       - name: Configure Pages
