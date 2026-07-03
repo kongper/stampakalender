@@ -13,8 +13,8 @@ os.makedirs(WORK_DIR, exist_ok=True)
 DB_PROJECT = os.path.join(PROJECT_DIR, "stampakalender.db")
 DB_WORK = os.path.join(WORK_DIR, "stampakalender.db")
 TEMPLATE_PATH = os.path.join(PROJECT_DIR, "template.html")
-HTML_PROJECT = os.path.join(PROJECT_DIR, "stampakalender.html")
-HTML_WORK = os.path.join(WORK_DIR, "stampakalender.html")
+HTML_PROJECT = os.path.join(PROJECT_DIR, "index.html")
+HTML_WORK = os.path.join(WORK_DIR, "index.html")
 
 RES_EID = ["Idrettshall, vest- basishall","Idrettshall, øst","Ishall","Garderobe 3","Garderobe 4","Garderobe 5","Garderobe 6","Garderobe 7","Garderobe 8","Garderobe Dommere","Garderobe Vest","Ungdomshallen","Uhall - ishall","Uhall - garderobe 1","Uhall - garderobe 2","Uhall - garderobe 3","Uhall - garderobe 4","Uhall - garderobe 5","Uhall - garderobe 6"]
 RES_STAMP = ["Garderobe Nord","Garderobe Syd","Søndre Bane Nord","Søndre bane Sør","Øvre Bane Nord","Øvre bane Sør","Nedre Bane","Vestre Bane","Nordre Grus","Treningssletta","Parkeringsareal","Røyslimoen Nord","Røyslimoen Sør","Røyslimoen 7er"]

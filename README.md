@@ -8,7 +8,7 @@ kommunes bookingsystem (bestille.no / Aktiv Kommune).
 
 | Fil | Beskrivelse |
 |-----|-------------|
-| `stampakalender.html` | Den ferdige, interaktive kalenderen. Åpne i nettleser. |
+| `index.html` | Den ferdige, interaktive kalenderen. Åpne i nettleser / publiseres på sk.kongper.no. |
 | `stampakalender.db` | SQLite-database med alle bookinger (`bookings`), endringslogg (`changes`) og `meta`. Sannhetskilden. |
 | `stampakalender_2026.json` | Lesbart øyeblikksbilde av det opprinnelige uttrekket. |
 | `template.html` | HTML-mal med plassholderne `__DATA__` og `__TODAY__`. |

@@ -7,7 +7,7 @@ Filer i arbeidsmappen (samme mappe som dette skriptet, eller angitt med STAMPA_R
   scrape.json            - ferskt uttrekk fra skraperen
   template.html          - (valgfri) HTML-mal; hvis gyldig regenereres kalenderen
 
-Oppdaterer DB in-place, logger endringer i 'changes', skriver stampakalender.html
+Oppdaterer DB in-place, logger endringer i 'changes', skriver index.html
 hvis mal finnes, og skriver en kort endringsrapport til stdout og til changes_report.txt.
 """
 import os, sys, json, sqlite3, datetime
@@ -16,7 +16,7 @@ RUN = os.environ.get("STAMPA_RUN", os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(RUN, "stampakalender.db")
 SCRAPE = os.path.join(RUN, "scrape.json")
 TEMPLATE = os.path.join(RUN, "template.html")
-HTML_OUT = os.path.join(RUN, "stampakalender.html")
+HTML_OUT = os.path.join(RUN, "index.html")
 REPORT = os.path.join(RUN, "changes_report.txt")
 
 RES_EID = ["Idrettshall, vest- basishall","Idrettshall, øst","Ishall","Garderobe 3","Garderobe 4","Garderobe 5","Garderobe 6","Garderobe 7","Garderobe 8","Garderobe Dommere","Garderobe Vest","Ungdomshallen","Uhall - ishall","Uhall - garderobe 1","Uhall - garderobe 2","Uhall - garderobe 3","Uhall - garderobe 4","Uhall - garderobe 5","Uhall - garderobe 6"]
