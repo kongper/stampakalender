@@ -15,6 +15,7 @@ permissions:
   contents: write   # commit updated DB + index.html
   pages: write      # deploy to Pages
   id-token: write
+  issues: write     # open an alert issue if the scrape returns no data
 
 # Share the deploy lock with deploy.yml so the two never publish at once.
 concurrency:
@@ -48,6 +49,7 @@ jobs:
           npx playwright install --with-deps chromium
 
       - name: Scrape source (bestille.no)
+        id: scrape
         env:
           DAYS_AHEAD: ${{ github.event.inputs.days_ahead || '150' }}
         run: node scrape_playwright.js
@@ -96,3 +98,29 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # If the scrape step failed (0 bookings / source changed), open or update
+      # a GitHub issue so the breakage is noticed. Runs only for scrape failures,
+      # not push/deploy hiccups. The DB/site are untouched on this path.
+      - name: Alert if scrape returned no data
+        if: failure() && steps.scrape.outcome == 'failure'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh label create nightly-failure --color B60205 \
+            --description "Nightly scrape failure" 2>/dev/null || true
+          TITLE="Nightly scrape found no bookings ($(date -u +%Y-%m-%d))"
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+          BODY=$(printf '%s\n' \
+            "The nightly Stampakalender scrape failed — usually this means **0 bookings** were returned for a source, which points to a change in the bestille.no page structure." \
+            "" \
+            "The run aborted before \`nightly.py\`, so the database and live site were **not** modified." \
+            "" \
+            "Failed run: $RUN_URL")
+          existing=$(gh issue list --label nightly-failure --state open \
+            --json number --jq '.[0].number' 2>/dev/null || echo "")
+          if [ -n "$existing" ]; then
+            gh issue comment "$existing" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --label nightly-failure --body "$BODY"
+          fi

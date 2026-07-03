@@ -44,25 +44,41 @@ const iso = (d) => d.toISOString().slice(0, 10);
     let chunkEnd = new Date(cur.getTime() + (CHUNK_DAYS - 1) * DAY_MS);
     if (chunkEnd > finalEnd) chunkEnd = finalEnd;
     const a = iso(cur), b = iso(chunkEnd);
-    const res = await page.evaluate(
-      async ({ a, b }) => await window.__scrapeRange(a, b),
-      { a, b }
-    );
-    console.log(`  ${a} .. ${b}: ${res.doneDays} days, ${res.totalBookings} bookings so far`);
+    await page.evaluate(async ({ a, b }) => await window.__scrapeRange(a, b), { a, b });
+    // Cumulative per-venue tally so far (venue is field 0 of each booking).
+    const t = await page.evaluate(() => {
+      const c = { eid: 0, stamp: 0 };
+      for (const bk of window.__ACC) { if (bk[0] === "eid") c.eid++; else if (bk[0] === "stamp") c.stamp++; }
+      return { ...c, total: window.__ACC.length };
+    });
+    console.log(`  ${a} .. ${b}: eid=${t.eid}, stamp=${t.stamp} (${t.total} total so far)`);
     cur = new Date(chunkEnd.getTime() + DAY_MS);
   }
 
   const result = await page.evaluate(() => window.__scrapeResult());
   await browser.close();
 
-  if (!result.bookings || result.bookings.length === 0) {
-    console.error("ERROR: no bookings scraped — aborting so the DB is not wiped.");
+  const tally = { eid: 0, stamp: 0 };
+  for (const bk of result.bookings || []) {
+    if (bk[0] === "eid") tally.eid++;
+    else if (bk[0] === "stamp") tally.stamp++;
+  }
+  const total = (result.bookings || []).length;
+
+  // Abort if EITHER source is empty. 0 bookings for a venue almost always means
+  // the bestille.no page structure changed; proceeding would let nightly.py
+  // delete that venue's future bookings from the DB. Non-zero exit fails the
+  // workflow step, which triggers the "open issue" alert in nightly.yml.
+  if (tally.eid === 0 || tally.stamp === 0) {
+    console.error(
+      `ERROR: a source returned no bookings (eid=${tally.eid}, stamp=${tally.stamp}, total=${total}) — aborting so the DB is not wiped.`
+    );
     process.exit(1);
   }
 
   fs.writeFileSync(path.join(HERE, "scrape.json"), JSON.stringify(result));
   console.log(
-    `Wrote scrape.json: ${result.bookings.length} bookings, window ${result.from} .. ${result.to}`
+    `Wrote scrape.json: eid=${tally.eid}, stamp=${tally.stamp}, ${total} total; window ${result.from} .. ${result.to}`
   );
 })().catch((err) => {
   console.error(err);
