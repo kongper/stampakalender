@@ -384,7 +384,8 @@ document.getElementById('dayNext').onclick=()=>shiftDay(1);
 document.getElementById('dayToday').onclick=()=>{state.day=TODAY;renderDay();};
 document.getElementById('dayInput').onchange=e=>{ if(e.target.value){ state.day=e.target.value; renderDay(); } };
 
-document.getElementById('note').innerHTML='Data hentet fra bestille.no <b>2. juli 2026</b>. Bookinger for høsten/vinteren er få fordi de i stor grad ikke var lagt inn ennå på uttrekkstidspunktet. Eidsiva Arena er sommerstengt 30.06–02.08.';
+const _hd=TODAY.split('-');const _MND=['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];const _HENTET=(+_hd[2])+'. '+_MND[+_hd[1]-1]+' '+_hd[0];
+document.getElementById('note').innerHTML='Data hentet fra bestille.no <b>'+_HENTET+'</b>. Bookinger for høsten/vinteren er få fordi de i stor grad ikke var lagt inn ennå på uttrekkstidspunktet. Eidsiva Arena er sommerstengt 30.06–02.08.';
 document.getElementById('footer').innerHTML='Kilde: statisk.bestille.no (Lillehammer kommune / Aktiv Kommune). «Stengt LK»-rader er utelatt fra bookinglisten og vist som sommerstengt.';
 
 buildFilter(); renderStats(); render(); updateNav(); renderSide(); switchView('day');
