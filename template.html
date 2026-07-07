@@ -19,7 +19,10 @@ h1{font-size:22px;margin:0 0 2px;font-weight:700;}
 .fbtn{border:1px solid #cdd6e0;background:#fff;border-radius:8px;padding:7px 12px;font-size:13px;cursor:pointer;color:#33455f;font-weight:600;}
 .fsum{font-size:12.5px;color:#5b6675;}
 .combo{position:relative;}
-.combo>input{min-width:210px;}
+.combo>input{min-width:210px;padding-right:28px;}
+.combo-clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;cursor:pointer;font-size:16px;line-height:1;color:#8592a3;padding:2px 4px;}
+.combo-clear:hover{color:#33455f;}
+.combo-clear[hidden]{display:none;}
 .combo-list{position:absolute;top:calc(100% + 4px);left:0;z-index:30;background:#fff;border:1px solid #cdd6e0;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.14);max-height:300px;overflow:auto;min-width:300px;padding:4px;}
 .combo-list[hidden]{display:none;}
 .combo-list .ci{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;cursor:pointer;font-size:12.5px;color:#3a4658;}
@@ -116,6 +119,7 @@ input[type=checkbox]{accent-color:#2f6fd0;}
     <span class="fsum" id="filterSummary"></span>
     <div class="combo">
       <input type="text" id="search" placeholder="Søk/velg leietaker…" autocomplete="off">
+      <button class="combo-clear" id="comboClear" type="button" hidden aria-label="Nullstill">×</button>
       <div class="combo-list" id="comboList" hidden></div>
     </div>
   </div>
@@ -354,6 +358,8 @@ document.getElementById('viewSeg').onclick=e=>{ if(e.target.tagName==='BUTTON') 
 (function(){
   const searchEl=document.getElementById('search');
   const listEl=document.getElementById('comboList');
+  const clearEl=document.getElementById('comboClear');
+  function updateClear(){ clearEl.hidden = !searchEl.value; }
   function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
   function renderCombo(){
     const q=(searchEl.value||'').toLowerCase();
@@ -364,9 +370,11 @@ document.getElementById('viewSeg').onclick=e=>{ if(e.target.tagName==='BUTTON') 
     listEl.innerHTML=h;
   }
   searchEl.addEventListener('focus',function(){ renderCombo(); listEl.hidden=false; });
-  searchEl.addEventListener('input',function(){ state.q=searchEl.value; renderCombo(); listEl.hidden=false; refresh(); });
-  listEl.addEventListener('mousedown',function(e){ const ci=e.target.closest('.ci'); if(!ci)return; e.preventDefault(); const val=ci.getAttribute('data-val'); searchEl.value=val; state.q=val; listEl.hidden=true; refresh(); });
+  searchEl.addEventListener('input',function(){ state.q=searchEl.value; renderCombo(); listEl.hidden=false; updateClear(); refresh(); });
+  listEl.addEventListener('mousedown',function(e){ const ci=e.target.closest('.ci'); if(!ci)return; e.preventDefault(); const val=ci.getAttribute('data-val'); searchEl.value=val; state.q=val; listEl.hidden=true; updateClear(); refresh(); });
+  clearEl.addEventListener('click',function(){ searchEl.value=''; state.q=''; clearEl.hidden=true; listEl.hidden=true; refresh(); searchEl.focus(); renderCombo(); });
   document.addEventListener('click',function(e){ if(!e.target.closest('.combo')) listEl.hidden=true; });
+  updateClear();
 })();
 document.getElementById('prev').onclick=()=>{state.m--;if(state.m<0){state.m=11;state.y--;}render();updateNav();};
 document.getElementById('next').onclick=()=>{state.m++;if(state.m>11){state.m=0;state.y++;}render();updateNav();};
