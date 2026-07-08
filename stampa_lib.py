@@ -78,8 +78,22 @@ def rebuild_html(conn, today=None):
         (eid if venue == "eid" else stamp).setdefault(date, []).append(entry)
     for d in eid: eid[d].sort(key=lambda e: (e[2], e[0]))
     for d in stamp: stamp[d].sort(key=lambda e: (e[2], e[0]))
+    from collections import Counter
+    _byrun = {}
+    for _rt, _ct, _v, _d, _r, _t in conn.execute("SELECT run_ts,change_type,venue,date,resource,tenant FROM changes").fetchall():
+        _e = _byrun.setdefault(_rt, {"a": [], "r": []})
+        (_e["a"] if _ct == "lagt til" else _e["r"]).append((_v, _d, _r, _t))
+    _summ = {}
+    for _rt, _e in _byrun.items():
+        _ac = Counter(_e["a"]); _rc = Counter(_e["r"])
+        _m = sum(min(_ac[k], _rc[k]) for k in _ac if k in _rc)
+        _s = _summ.setdefault(_rt[:10], [0, 0, 0])
+        _s[0] += sum(_ac.values()) - _m; _s[1] += _m; _s[2] += sum(_rc.values()) - _m
+    _endr = [{"d": _d, "a": _summ[_d][0], "m": _summ[_d][1], "r": _summ[_d][2]} for _d in sorted(_summ, reverse=True)][:21]
+    _sm = conn.execute("SELECT value FROM meta WHERE key='sist_oppdatert'").fetchone()
     DATA = {"navn": tenants, "resEid": RES_EID, "resStamp": RES_STAMP,
-            "stengt": STENGT, "eid": eid, "stamp": stamp}
+            "stengt": STENGT, "eid": eid, "stamp": stamp,
+            "endringer": _endr, "sistOppdatert": (_sm[0] if _sm else "")}
     tpl = open(TEMPLATE_PATH, encoding="utf-8").read()
     out = tpl.replace("__DATA__", json.dumps(DATA, ensure_ascii=False, separators=(",", ":")))
     out = out.replace("__TODAY__", today)
