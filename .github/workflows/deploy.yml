@@ -35,8 +35,11 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      # NB: upload-pages-artifact@v3 gir en ufarlig Node 20-advarsel, men @v4 er
+      # IKKE kompatibel med deploy-pages@v4 (feiler med "Multiple artifacts named
+      # github-pages ... count is 2"). Behold v3 til GitHub slipper kompatible v4-er.
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 

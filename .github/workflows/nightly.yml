@@ -90,8 +90,10 @@ jobs:
           cp index.html _site/index.html
           cp CNAME _site/CNAME
 
+      # NB: behold upload-pages-artifact@v3 (ufarlig Node 20-advarsel). @v4 er ikke
+      # kompatibel med deploy-pages@v4 og gir "Multiple artifacts named github-pages".
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: _site
 
