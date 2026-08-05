@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stampakalender</title>
+<meta name="description" content="Fotballkalender og oversikt over haller, baner og garderober på Stampesletta, Lillehammer.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='29' fill='%23ffffff' stroke='%23111111' stroke-width='2.5'/%3E%3Cpolygon points='32,19 41,26 37,37 27,37 23,26' fill='%23111111'/%3E%3Cpath d='M32 19 L32 6 M41 26 L52 20 M37 37 L46 47 M27 37 L18 47 M23 26 L12 20' stroke='%23111111' stroke-width='2.5' fill='none'/%3E%3C/svg%3E">
+
 <style>
 :root{ color-scheme: light; }
 *{box-sizing:border-box;}
@@ -11,7 +14,21 @@ body{margin:0;background:#f4f6f9;color:#1c2430;font-family:-apple-system,BlinkMa
 .wrap{max-width:1180px;margin:0 auto;padding:20px 20px 60px;}
 h1{font-size:22px;margin:0 0 2px;font-weight:700;}
 .sub{color:#5b6675;font-size:13px;margin:0 0 14px;}
-.note{background:#fff7e6;border:1px solid #f2d9a0;color:#7a5a12;border-radius:8px;padding:9px 12px;font-size:12.5px;margin:22px 0 10px;}
+.note{color:#6b7686;font-size:12px;margin:16px 0 6px;}
+.warn{background:#fdecea;border:1px solid #f3b0a6;color:#8a1c10;border-radius:8px;padding:9px 12px;font-size:13px;font-weight:600;margin-bottom:12px;}
+.warn[hidden]{display:none;}
+.loglink{background:none;border:0;color:#2f6fd0;cursor:pointer;font-size:12.5px;text-decoration:underline;padding:0;}
+.modal{position:fixed;inset:0;z-index:100;background:rgba(20,30,50,.45);display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto;}
+.modal[hidden]{display:none;}
+.modal-card{background:#fff;border-radius:12px;max-width:520px;width:100%;padding:18px 20px;box-shadow:0 12px 40px rgba(0,0,0,.25);}
+.modal-card h3{margin:0;font-size:16px;}
+.modal-card .msub{color:#5b6675;font-size:12.5px;margin:2px 0 12px;}
+.modal-close{float:right;border:0;background:transparent;font-size:20px;cursor:pointer;color:#8592a3;line-height:1;}
+.logrow{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #f0f3f7;font-size:13px;}
+.logrow .ld{font-weight:700;color:#33455f;}
+.logrow .add{color:#1f7a45;}
+.logrow .mov{color:#8a5cd1;}
+.logrow .rem{color:#c0392b;}
 .toolbar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:12px;}
 .seg{display:inline-flex;background:#e7ecf2;border-radius:9px;padding:3px;gap:2px;}
 .seg button{border:0;background:transparent;padding:6px 13px;border-radius:7px;cursor:pointer;font-size:13px;color:#3a4658;font-weight:600;}
@@ -107,6 +124,7 @@ input[type=checkbox]{accent-color:#2f6fd0;}
 <div class="wrap">
   <h1>Stampakalender</h1>
   <p class="sub">Haller, baner og garderober på Stampesletta, Lillehammer · Eidsiva Arena / Ungdomshallen og uteanleggene</p>
+  <div class="warn" id="warn" hidden></div>
   <div class="toolbar">
     <div class="seg" id="viewSeg">
       <button data-view="month">Måned</button>
@@ -161,7 +179,9 @@ input[type=checkbox]{accent-color:#2f6fd0;}
 
   <div class="note" id="note"></div>
   <div class="stats" id="stats"></div>
+  <div style="margin:0 0 10px"><button class="loglink" id="logBtn">Vis endringslogg →</button></div>
   <div class="footer" id="footer"></div>
+  <div class="modal" id="logModal" hidden><div class="modal-card"><button class="modal-close" id="logClose" aria-label="Lukk">×</button><h3>Endringslogg</h3><div class="msub">Automatiske oppdateringer fra bestille.no (nyeste først). «Flyttet» = samme ressurs/dato/leietaker med endret tid.</div><div id="logBody"></div></div></div>
 </div>
 
 <script>
@@ -384,10 +404,26 @@ document.getElementById('dayToday').onclick=()=>{state.day=TODAY;renderDay();};
 document.getElementById('dayInput').onchange=e=>{ if(e.target.value){ state.day=e.target.value; renderDay(); } };
 
 const _hd=TODAY.split('-');const _MND=['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];const _HENTET=(+_hd[2])+'. '+_MND[+_hd[1]-1]+' '+_hd[0];
-document.getElementById('note').innerHTML='Data hentet fra bestille.no <b>'+_HENTET+'</b>. Bookinger for høsten/vinteren er få fordi de i stor grad ikke var lagt inn ennå på uttrekkstidspunktet. Eidsiva Arena er sommerstengt 30.06–02.08.';
+document.getElementById('note').innerHTML='Sist oppdatert: <b>'+_HENTET+'</b>';
 document.getElementById('footer').innerHTML='Kilde: statisk.bestille.no (Lillehammer kommune / Aktiv Kommune). «Stengt LK»-rader er utelatt fra bookinglisten og vist som sommerstengt.';
 
-buildFilter(); renderStats(); render(); updateNav(); renderSide(); switchView('day');
+function renderWarn(){
+  const w=document.getElementById('warn'); const s=DATA.sistOppdatert;
+  if(!s){ w.hidden=true; return; }
+  const upd=new Date(s.slice(0,10)+'T00:00:00'); const now=new Date(); now.setHours(0,0,0,0);
+  const days=Math.floor((now-upd)/86400000);
+  if(days>=2){ const dd=upd.getDate()+'. '+MONTHS[upd.getMonth()].toLowerCase(); w.innerHTML='\u26A0 Data er ikke oppdatert p\u00e5 '+days+' dager (sist '+dd+'). Kilden (bestille.no) kan v\u00e6re utilgjengelig \u2013 vis kalenderen med forbehold.'; w.hidden=false; }
+  else { w.hidden=true; }
+}
+function buildLog(){
+  const list=DATA.endringer||[];
+  const body=list.map(function(e){ const p=e.d.split('-'); const dm=p[2]+'.'+p[1]; const parts=[]; if(e.a)parts.push('<span class="add">'+e.a+' lagt til</span>'); if(e.m)parts.push('<span class="mov">'+e.m+' flyttet</span>'); if(e.r)parts.push('<span class="rem">'+e.r+' fjernet</span>'); if(!parts.length)parts.push('<span style="color:#8592a3">ingen endring</span>'); return '<div class="logrow"><span class="ld">'+dm+'</span><span>'+parts.join(' \u00b7 ')+'</span></div>'; }).join('') || '<div class="msub">Ingen endringer registrert enn\u00e5.</div>';
+  document.getElementById('logBody').innerHTML=body;
+  const b=document.getElementById('logBtn'); if(b) b.onclick=function(){ document.getElementById('logModal').hidden=false; };
+  const c=document.getElementById('logClose'); if(c) c.onclick=function(){ document.getElementById('logModal').hidden=true; };
+  const m=document.getElementById('logModal'); if(m) m.addEventListener('click',function(e){ if(e.target.id==='logModal') m.hidden=true; });
+}
+buildFilter(); renderStats(); render(); updateNav(); renderSide(); switchView('day'); buildLog(); renderWarn();
 </script>
 </body>
 </html>
