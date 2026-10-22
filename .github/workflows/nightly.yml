@@ -11,11 +11,9 @@ on:
         required: false
         default: "150"
 
-permissions:
-  contents: write   # commit updated DB + index.html
-  pages: write      # deploy to Pages
-  id-token: write
-  issues: write     # open an alert issue if the scrape returns no data
+# Standard for alle jobber er ingen rettigheter; jobben under ber om det den
+# faktisk trenger. Da starter en eventuell ny jobb lukket i stedet for åpen.
+permissions: {}
 
 # Share the deploy lock with deploy.yml so the two never publish at once.
 concurrency:
@@ -25,27 +23,40 @@ concurrency:
 jobs:
   nightly:
     runs-on: ubuntu-latest
+    timeout-minutes: 30   # kjøringen tar normalt 5-6 min; stopper en hengt jobb
+    permissions:
+      contents: write   # commit updated DB + index.html
+      pages: write      # deploy to Pages
+      id-token: write
+      issues: write     # open an alert issue if the scrape returns no data
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Alle actions er pinnet til commit-SHA, ikke til flyttbare tagger.
+      # En tagg kan flyttes til ondsinnet kode (jf. tj-actions/changed-files,
+      # CVE-2025-30066); en SHA kan ikke det. Kommentaren bak viser versjonen —
+      # oppdater SHA og kommentar sammen.
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
       - name: Set up Node
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
-          node-version: "22"
+          node-version: "22"   # løses til nyeste 22.x, så Node-fikser kommer av seg selv
 
       - name: Set up Python
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: "3.12"
 
+      # Eksakt versjon, ikke @latest: pakken lastes ned på nytt hver natt og
+      # kjøres i en jobb som har skrivetilgang til repoet. Med @latest ville en
+      # kompromittert Playwright-utgivelse truffet oss automatisk samme natt.
       - name: Install Playwright + Chromium
         run: |
           npm init -y >/dev/null 2>&1
-          npm install playwright@latest
+          npm install --no-fund --no-audit playwright@1.64.1
           npx playwright install --with-deps chromium
 
       - name: Scrape source (bestille.no)
@@ -82,7 +93,7 @@ jobs:
           fi
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
       - name: Stage static site
         run: |
@@ -90,16 +101,19 @@ jobs:
           cp index.html _site/index.html
           cp CNAME _site/CNAME
 
-      # NB: behold upload-pages-artifact@v3 (ufarlig Node 20-advarsel). @v4 er ikke
-      # kompatibel med deploy-pages@v4 og gir "Multiple artifacts named github-pages".
+      # NB: upload-pages-artifact og deploy-pages MÅ oppgraderes i par. Forrige
+      # forsøk bumpet kun upload til v4 mens deploy sto på v4, og feilet med
+      # "Multiple artifacts named github-pages". Her står begge på v5.
+      # Samme feil kan også oppstå ved re-run av en jobb, uavhengig av versjon,
+      # fordi artefakter lever på tvers av forsøk i samme kjøring.
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
 
       # If the scrape step failed (0 bookings / source changed), open or update
       # a GitHub issue so the breakage is noticed. Runs only for scrape failures,

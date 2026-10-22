@@ -39,6 +39,39 @@ def _bytecopy(src, dst):
     with open(src, "rb") as f, open(dst, "wb") as g:
         g.write(f.read())
 
+def _to_oslo(ts):
+    """Gjør en lagret run_ts om til norsk lokaltid.
+
+    run_ts skrives av nightly.py med datetime.now() uten tidssone. Jobben kjører
+    på en GitHub-runner, og de står i UTC — derfor tolkes naive verdier som UTC.
+    Returnerer ISO-streng i Europe/Oslo, eller input uendret hvis den ikke lar
+    seg tolke.
+    """
+    try:
+        dt = datetime.datetime.fromisoformat(ts)
+    except (TypeError, ValueError):
+        return ts
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=datetime.timezone.utc)
+    try:
+        from zoneinfo import ZoneInfo
+        return dt.astimezone(ZoneInfo("Europe/Oslo")).isoformat()
+    except Exception:
+        # Uten tzdata viser vi heller UTC enn å gjette på sommertid.
+        return dt.isoformat()
+
+def _js_json(obj):
+    """Serialiser til JSON som trygt kan limes inn i en inline <script>-blokk.
+
+    Data kommer fra bestille.no, der leietakernavn skrives av tredjepart. Uten
+    dette ville et navn som inneholder "</script>" avslutte script-taggen og
+    kunne kjøre vilkårlig HTML videre i dokumentet.
+    """
+    s = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
+    return (s.replace("</", "<\\/")
+             .replace(" ", "\\u2028")
+             .replace(" ", "\\u2029"))
+
 def connect(fresh=False):
     if os.path.exists(DB_WORK):
         try: os.remove(DB_WORK)
@@ -83,19 +116,23 @@ def rebuild_html(conn, today=None):
     for _rt, _ct, _v, _d, _r, _t in conn.execute("SELECT run_ts,change_type,venue,date,resource,tenant FROM changes").fetchall():
         _e = _byrun.setdefault(_rt, {"a": [], "r": []})
         (_e["a"] if _ct == "lagt til" else _e["r"]).append((_v, _d, _r, _t))
-    _summ = {}
-    for _rt, _e in _byrun.items():
+    # Én rad per kjøring (ikke per dato), slik at to kjøringer samme dag vises
+    # hver for seg. Klokkeslettet gjøres om til norsk tid for visning.
+    _endr = []
+    for _rt in sorted(_byrun, reverse=True)[:21]:
+        _e = _byrun[_rt]
         _ac = Counter(_e["a"]); _rc = Counter(_e["r"])
         _m = sum(min(_ac[k], _rc[k]) for k in _ac if k in _rc)
-        _s = _summ.setdefault(_rt[:10], [0, 0, 0])
-        _s[0] += sum(_ac.values()) - _m; _s[1] += _m; _s[2] += sum(_rc.values()) - _m
-    _endr = [{"d": _d, "a": _summ[_d][0], "m": _summ[_d][1], "r": _summ[_d][2]} for _d in sorted(_summ, reverse=True)][:21]
+        _lokal = _to_oslo(_rt)
+        _endr.append({"d": _lokal[:10], "t": _lokal[11:16],
+                      "a": sum(_ac.values()) - _m, "m": _m,
+                      "r": sum(_rc.values()) - _m})
     _sm = conn.execute("SELECT value FROM meta WHERE key='sist_oppdatert'").fetchone()
     DATA = {"navn": tenants, "resEid": RES_EID, "resStamp": RES_STAMP,
             "stengt": STENGT, "eid": eid, "stamp": stamp,
-            "endringer": _endr, "sistOppdatert": (_sm[0] if _sm else "")}
+            "endringer": _endr, "sistOppdatert": (_to_oslo(_sm[0]) if _sm else "")}
     tpl = open(TEMPLATE_PATH, encoding="utf-8").read()
-    out = tpl.replace("__DATA__", json.dumps(DATA, ensure_ascii=False, separators=(",", ":")))
+    out = tpl.replace("__DATA__", _js_json(DATA))
     out = out.replace("__TODAY__", today)
     open(HTML_WORK, "w", encoding="utf-8").write(out)
     _bytecopy(HTML_WORK, HTML_PROJECT)

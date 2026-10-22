@@ -5,11 +5,9 @@ on:
     branches: [main]
   workflow_dispatch:
 
-# Allow the workflow to publish to Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+# Standard for alle jobber er ingen rettigheter; jobben under ber om det den
+# faktisk trenger.
+permissions: {}
 
 # Only one deploy at a time; don't cancel an in-progress run
 concurrency:
@@ -19,12 +17,21 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # Pinnet til commit-SHA, ikke flyttbare tagger — se begrunnelsen i
+      # nightly.yml. Hold versjonene her i synk med nightly.yml.
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false   # denne jobben pusher ikke
 
       - name: Stage static site
         run: |
@@ -33,16 +40,14 @@ jobs:
           cp CNAME _site/CNAME
 
       - name: Configure Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
 
-      # NB: upload-pages-artifact@v3 gir en ufarlig Node 20-advarsel, men @v4 er
-      # IKKE kompatibel med deploy-pages@v4 (feiler med "Multiple artifacts named
-      # github-pages ... count is 2"). Behold v3 til GitHub slipper kompatible v4-er.
+      # upload-pages-artifact og deploy-pages må følge hverandre i versjon.
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

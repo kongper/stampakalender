@@ -25,7 +25,8 @@ h1{font-size:22px;margin:0 0 2px;font-weight:700;}
 .modal-card .msub{color:#5b6675;font-size:12.5px;margin:2px 0 12px;}
 .modal-close{float:right;border:0;background:transparent;font-size:20px;cursor:pointer;color:#8592a3;line-height:1;}
 .logrow{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #f0f3f7;font-size:13px;}
-.logrow .ld{font-weight:700;color:#33455f;}
+.logrow .ld{font-weight:700;color:#33455f;white-space:nowrap;}
+.logrow .lt{font-weight:400;color:#8592a3;margin-left:5px;}
 .logrow .add{color:#1f7a45;}
 .logrow .mov{color:#8a5cd1;}
 .logrow .rem{color:#c0392b;}
@@ -181,7 +182,7 @@ input[type=checkbox]{accent-color:#2f6fd0;}
   <div class="stats" id="stats"></div>
   <div style="margin:0 0 10px"><button class="loglink" id="logBtn">Vis endringslogg →</button></div>
   <div class="footer" id="footer"></div>
-  <div class="modal" id="logModal" hidden><div class="modal-card"><button class="modal-close" id="logClose" aria-label="Lukk">×</button><h3>Endringslogg</h3><div class="msub">Automatiske oppdateringer fra bestille.no (nyeste først). «Flyttet» = samme ressurs/dato/leietaker med endret tid.</div><div id="logBody"></div></div></div>
+  <div class="modal" id="logModal" hidden><div class="modal-card"><button class="modal-close" id="logClose" aria-label="Lukk">×</button><h3>Endringslogg</h3><div class="msub">Én rad per kjøring, nyeste først. Klokkeslett i norsk tid. «Flyttet» = samme ressurs/dato/leietaker med endret tid.</div><div id="logBody"></div></div></div>
 </div>
 
 <script>
@@ -192,6 +193,15 @@ const WD = ["Søndag","Mandag","Tirsdag","Onsdag","Torsdag","Fredag","Lørdag"];
 const PALETTE = ["#2f6fd0","#e0559a","#e0793a","#3aa675","#8a5cd1","#c0392b","#0f9aa8","#b5892a","#5b6ee0","#d1418f","#487a2a","#a0522d","#6a4bbd","#c72c6a","#2f8f9d","#946b00","#7a4fd0","#d05b2f","#3a7a5b"];
 const colorFor = {};
 DATA.navn.forEach((n,i)=>colorFor[n]=PALETTE[i%PALETTE.length]);
+
+/* Leietaker- og ressursnavn kommer fra bestille.no og skrives av tredjepart.
+   Alt slikt MÅ gjennom esc() før det settes inn via innerHTML eller i et
+   HTML-attributt, ellers kan et navn injisere markup i kalenderen. */
+function esc(s){
+  return String(s==null?'':s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 
 const eidDays={}, stampDays={};
 for(const d in DATA.eid){ eidDays[d]=DATA.eid[d].map(e=>({venue:'eid',res:DATA.resEid[e[0]],name:DATA.navn[e[1]],from:e[2],to:e[3]})); }
@@ -238,7 +248,7 @@ function groupBookings(list){
 }
 
 function buildFilter(){
-  const mk=(venue,arr)=>arr.map(r=>'<label><input type="checkbox" class="resChk" data-key="'+venue+'|'+r+'"'+(picked.has(venue+'|'+r)?' checked':'')+'> '+r+'</label>').join('');
+  const mk=(venue,arr)=>arr.map(r=>'<label><input type="checkbox" class="resChk" data-key="'+esc(venue+'|'+r)+'"'+(picked.has(venue+'|'+r)?' checked':'')+'> '+esc(r)+'</label>').join('');
   document.getElementById('fitems-eid').innerHTML=mk('eid',DATA.resEid);
   document.getElementById('fitems-stamp').innerHTML=mk('stamp',DATA.resStamp);
   document.querySelectorAll('.resChk').forEach(c=>c.onchange=onResChange);
@@ -286,7 +296,7 @@ function render(){
       cell.classList.add('has');
       const groups=groupBookings(list);
       const shown=groups.slice(0,3);
-      html+='<div class="chips">'+shown.map(g=>'<span class="chip" style="background:'+colorFor[g.name]+'" title="'+g.from+'-'+g.to+' · '+g.name+' · '+g.res.join(', ')+'">'+g.from+' '+g.name.split(' - ')[0]+(g.res.length>1?' ('+g.res.length+')':'')+'</span>').join('')+'</div>';
+      html+='<div class="chips">'+shown.map(g=>'<span class="chip" style="background:'+colorFor[g.name]+'" title="'+esc(g.from+'-'+g.to+' · '+g.name+' · '+g.res.join(', '))+'">'+esc(g.from)+' '+esc(g.name.split(' - ')[0])+(g.res.length>1?' ('+g.res.length+')':'')+'</span>').join('')+'</div>';
       if(groups.length>3) html+='<div class="more">+'+(groups.length-3)+' til</div>';
     } else if(eidClosed){
       cell.classList.add('closed');
@@ -310,13 +320,13 @@ function renderSide(){
   if(!groups.length){ h+='<div class="empty">Ingen bookinger'+((eidVisible()&&isEidClosed(state.sel))?' — Eidsiva Arena sommerstengt.':'.')+'</div>'; }
   groups.forEach(g=>{
     const resHtml = g.res.length>1
-      ? '<div class="r"><b>'+g.res.length+' ressurser:</b> '+g.res.join(', ')+'</div>'
-      : '<div class="r">'+g.res[0]+'</div>';
+      ? '<div class="r"><b>'+g.res.length+' ressurser:</b> '+esc(g.res.join(', '))+'</div>'
+      : '<div class="r">'+esc(g.res[0])+'</div>';
     h+='<div class="bk" style="border-color:'+colorFor[g.name]+'">'+
        '<span class="venuetag '+(g.venue==='eid'?'vt-eid':'vt-stamp')+'">'+(g.venue==='eid'?'Eidsiva':'Stampesletta')+'</span>'+
-       '<div class="t">'+g.from+'–'+g.to+'</div>'+
+       '<div class="t">'+esc(g.from)+'–'+esc(g.to)+'</div>'+
        resHtml+
-       '<div class="n">'+g.name+'</div></div>';
+       '<div class="n">'+esc(g.name)+'</div></div>';
   });
   side.innerHTML=h;
   const _b=document.getElementById('tlBtn'); if(_b){ _b.onclick=function(){ goDay(_b.getAttribute('data-day')); }; }
@@ -341,8 +351,8 @@ function renderDay(){
     pr.forEach(function(r){
       const bs=byRes[v+'|'+r]||[];
       let bars='';
-      bs.forEach(function(b){ const l=xpct(fromMin(b.from)), w=Math.max(0.6,xpct(fromMin(b.to))-l); bars+='<div class="tlbar" style="left:'+l+'%;width:'+w+'%;background:'+colorFor[b.name]+'" title="'+b.from+'–'+b.to+'  '+b.name+'">'+b.from+' '+b.name.split(' - ')[0]+'</div>'; });
-      rows+='<div class="tlrow"><div class="tlname" title="'+r+'">'+r+'</div><div class="tltrack">'+bars+'</div></div>';
+      bs.forEach(function(b){ const l=xpct(fromMin(b.from)), w=Math.max(0.6,xpct(fromMin(b.to))-l); bars+='<div class="tlbar" style="left:'+l+'%;width:'+w+'%;background:'+colorFor[b.name]+'" title="'+esc(b.from+'–'+b.to+'  '+b.name)+'">'+esc(b.from)+' '+esc(b.name.split(' - ')[0])+'</div>'; });
+      rows+='<div class="tlrow"><div class="tlname" title="'+esc(r)+'">'+esc(r)+'</div><div class="tltrack">'+bars+'</div></div>';
     });
   });
   let html='<div class="tlhint">Tidslinje 07:00–23:30. Fargede felt = opptatt (leietaker), tomme = ledig. Bruk ressursfilteret for å velge hvilke linjer som vises.</div>';
@@ -379,13 +389,12 @@ document.getElementById('viewSeg').onclick=e=>{ if(e.target.tagName==='BUTTON') 
   const listEl=document.getElementById('comboList');
   const clearEl=document.getElementById('comboClear');
   function updateClear(){ clearEl.hidden = !searchEl.value; }
-  function esc(s){return s.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');}
   function renderCombo(){
     const q=(searchEl.value||'').toLowerCase();
     const matches=DATA.navn.filter(n=>n.toLowerCase().includes(q));
     let h='<div class="ci all" data-val="">Alle leietakere</div>';
     if(!matches.length) h+='<div class="none">Ingen treff</div>';
-    else h+=matches.map(n=>'<div class="ci" data-val="'+esc(n)+'"><span class="sw" style="background:'+colorFor[n]+'"></span>'+n+'</div>').join('');
+    else h+=matches.map(n=>'<div class="ci" data-val="'+esc(n)+'"><span class="sw" style="background:'+colorFor[n]+'"></span>'+esc(n)+'</div>').join('');
     listEl.innerHTML=h;
   }
   searchEl.addEventListener('focus',function(){ renderCombo(); listEl.hidden=false; });
@@ -417,7 +426,7 @@ function renderWarn(){
 }
 function buildLog(){
   const list=DATA.endringer||[];
-  const body=list.map(function(e){ const p=e.d.split('-'); const dm=p[2]+'.'+p[1]; const parts=[]; if(e.a)parts.push('<span class="add">'+e.a+' lagt til</span>'); if(e.m)parts.push('<span class="mov">'+e.m+' flyttet</span>'); if(e.r)parts.push('<span class="rem">'+e.r+' fjernet</span>'); if(!parts.length)parts.push('<span style="color:#8592a3">ingen endring</span>'); return '<div class="logrow"><span class="ld">'+dm+'</span><span>'+parts.join(' \u00b7 ')+'</span></div>'; }).join('') || '<div class="msub">Ingen endringer registrert enn\u00e5.</div>';
+  const body=list.map(function(e){ const p=e.d.split('-'); const dm=p[2]+'.'+p[1]; const tid=e.t?'<span class="lt">kl. '+esc(e.t)+'</span>':''; const parts=[]; if(e.a)parts.push('<span class="add">'+e.a+' lagt til</span>'); if(e.m)parts.push('<span class="mov">'+e.m+' flyttet</span>'); if(e.r)parts.push('<span class="rem">'+e.r+' fjernet</span>'); if(!parts.length)parts.push('<span style="color:#8592a3">ingen endring</span>'); return '<div class="logrow"><span class="ld">'+dm+tid+'</span><span>'+parts.join(' \u00b7 ')+'</span></div>'; }).join('') || '<div class="msub">Ingen endringer registrert enn\u00e5.</div>';
   document.getElementById('logBody').innerHTML=body;
   const b=document.getElementById('logBtn'); if(b) b.onclick=function(){ document.getElementById('logModal').hidden=false; };
   const c=document.getElementById('logClose'); if(c) c.onclick=function(){ document.getElementById('logModal').hidden=true; };
