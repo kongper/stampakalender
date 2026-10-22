@@ -12,6 +12,12 @@ hvis mal finnes, og skriver en kort endringsrapport til stdout og til changes_re
 """
 import os, sys, json, sqlite3, datetime
 
+# NB: denne fila har sin EGEN rebuild_html, parallelt med den i stampa_lib.py.
+# Det er jobben her (python3 nightly.py) GitHub-actionen kjører, så endringer i
+# HTML-genereringen må gjøres BEGGE steder — eller, som her, deles via felles
+# hjelpefunksjoner. Legger du til noe nytt: sjekk at stampa_lib.py følger med.
+from stampa_lib import _to_oslo, _js_json
+
 RUN = os.environ.get("STAMPA_RUN", os.path.dirname(os.path.abspath(__file__)))
 DB = os.path.join(RUN, "stampakalender.db")
 SCRAPE = os.path.join(RUN, "scrape.json")
@@ -47,19 +53,23 @@ def rebuild_html(conn, today):
     for _rt,_ct,_v,_d,_r,_t in conn.execute("SELECT run_ts,change_type,venue,date,resource,tenant FROM changes").fetchall():
         _e=_byrun.setdefault(_rt,{"a":[],"r":[]})
         (_e["a"] if _ct=="lagt til" else _e["r"]).append((_v,_d,_r,_t))
-    _summ={}
-    for _rt,_e in _byrun.items():
+    # Én rad per kjøring (ikke per dato), med klokkeslett i norsk tid.
+    _endr=[]
+    for _rt in sorted(_byrun, reverse=True)[:21]:
+        _e=_byrun[_rt]
         _ac=Counter(_e["a"]); _rc=Counter(_e["r"])
         _m=sum(min(_ac[k],_rc[k]) for k in _ac if k in _rc)
-        _s=_summ.setdefault(_rt[:10],[0,0,0])
-        _s[0]+=sum(_ac.values())-_m; _s[1]+=_m; _s[2]+=sum(_rc.values())-_m
-    _endr=[{"d":_d,"a":_summ[_d][0],"m":_summ[_d][1],"r":_summ[_d][2]} for _d in sorted(_summ,reverse=True)][:21]
+        _lokal=_to_oslo(_rt)
+        _endr.append({"d":_lokal[:10],"t":_lokal[11:16],
+                      "a":sum(_ac.values())-_m,"m":_m,"r":sum(_rc.values())-_m})
     _sm=conn.execute("SELECT value FROM meta WHERE key='sist_oppdatert'").fetchone()
-    DATA = {"navn":tenants,"resEid":reid,"resStamp":rstamp,"stengt":STENGT,"eid":eid,"stamp":stamp,"endringer":_endr,"sistOppdatert":(_sm[0] if _sm else "")}
+    DATA = {"navn":tenants,"resEid":reid,"resStamp":rstamp,"stengt":STENGT,"eid":eid,"stamp":stamp,"endringer":_endr,"sistOppdatert":(_to_oslo(_sm[0]) if _sm else "")}
     tpl = open(TEMPLATE, encoding="utf-8").read()
     if "__DATA__" not in tpl or not tpl.rstrip().endswith("</html>"):
         raise ValueError("mal ugyldig")
-    out = tpl.replace("__DATA__", json.dumps(DATA, ensure_ascii=False, separators=(",",":"))).replace("__TODAY__", today)
+    # _js_json, ikke json.dumps: escaper "</" så et leietakernavn ikke kan
+    # avslutte <script>-blokka. Se stampa_lib._js_json.
+    out = tpl.replace("__DATA__", _js_json(DATA)).replace("__TODAY__", today)
     open(HTML_OUT, "w", encoding="utf-8").write(out)
     return len(rows)
 
