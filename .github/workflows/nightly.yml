@@ -3,7 +3,7 @@ name: Nightly scrape and deploy
 on:
   schedule:
     # 02:00 UTC daily (~03:00-04:00 Norway). GitHub cron is UTC.
-    - cron: "0 2 * * *"
+    - cron: "0 2,14 * * *"
   workflow_dispatch:
     inputs:
       days_ahead:
