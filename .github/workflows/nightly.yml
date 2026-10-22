@@ -2,7 +2,10 @@ name: Nightly scrape and deploy
 
 on:
   schedule:
-    # 02:00 UTC daily (~03:00-04:00 Norway). GitHub cron is UTC.
+    # To ganger daglig, 02:00 og 14:00 UTC (~03/15 vinter, ~04/16 norsk sommertid).
+    # GitHub cron er alltid UTC. Merk at runde klokkeslett står i en lang kø hos
+    # GitHub: i praksis har 02-kjøringen startet rundt 07 UTC. Vil du treffe
+    # nærmere oppsatt tid, bruk et skjevt minutt (f.eks. "17 1,13 * * *").
     - cron: "0 2,14 * * *"
   workflow_dispatch:
     inputs:
